@@ -48,11 +48,10 @@ export default{
       };
       axios.post(url, user).then((response)=>{
         if(response.data.success == true){
-          console.log(response);
           this.$router.push({name: 'login'})
         } else {
           this.message = "Email already exist";
-        }       
+        }
       })
     },
   }

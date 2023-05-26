@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import RegisterView from '../views/Register.vue';
 import LoginView from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
-import ArtistForm from '../views/ArtistForm.vue';
+import ArtistForm from '../views/ArtistProfile.vue';
 import SignupView from '../views/ArtistSignup.vue';
 import SigninView from '../views/Signin.vue';
 import AdminDashboard from '../views/AdminDashboard.vue';
