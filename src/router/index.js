@@ -3,6 +3,10 @@ import HomeView from '../views/HomeView.vue';
 import RegisterView from '../views/Register.vue';
 import LoginView from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
+import ArtistForm from '../views/ArtistForm.vue';
+import SignupView from '../views/ArtistSignup.vue';
+import SigninView from '../views/Signin.vue';
+import AdminDashboard from '../views/AdminDashboard.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,14 +30,34 @@ const router = createRouter({
       component: RegisterView
     },
     {
+      path: '/signup',
+      name: 'signup',
+      component: SignupView
+    },
+    {
       path: '/login',
       name: 'login',
       component: LoginView
     },
     {
+      path: '/signin',
+      name: 'signin',
+      component: SigninView
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminDashboard
+    },
+    {
+      path: '/artist',
+      name: 'artist',
+      component: ArtistForm
     },
     
   ]
