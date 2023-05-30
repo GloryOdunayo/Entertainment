@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
-import RegisterView from '../views/Register.vue';
-import LoginView from '../views/Login.vue';
-import Dashboard from '../views/Dashboard.vue';
-import ArtistForm from '../views/ArtistProfile.vue';
-import SignupView from '../views/ArtistSignup.vue';
-import SigninView from '../views/Signin.vue';
-import AdminDashboard from '../views/AdminDashboard.vue';
+import RegisterView from '../views/users/Register.vue';
+import LoginView from '../views/users/Login.vue';
+import BookingView from '../views/users/Booking.vue';
+import Dashboard from '../views/users/Dashboard.vue';
+import ArtistForm from '../views/admins/ArtistProfile.vue';
+import SignupView from '../views/admins/ArtistSignup.vue';
+import PictureForm from '../views/admins/Picture.vue';
+import SigninView from '../views/admins/Signin.vue';
+import AdminDashboard from '../views/admins/AdminDashboard.vue';
+import NotFound from '../views/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +48,11 @@ const router = createRouter({
       component: SigninView
     },
     {
+      path: '/booking',
+      name: 'booking',
+      component: BookingView
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard
@@ -59,7 +67,15 @@ const router = createRouter({
       name: 'artist',
       component: ArtistForm
     },
-    
+    {
+      path: '/picture',
+      name: 'picture',
+      component: PictureForm
+    },
+    // {
+    //   path: '*',
+    //   component: NotFound
+    // },
   ]
 })
 

@@ -1,11 +1,11 @@
 <script setup>
-  import Nav from '../components/Nav.vue'
+  import Nav from '../../components/Nav.vue'
 </script>
 <template>
   <Nav></Nav>
   <div class="container" align="center" style="margin-top: 5em">
     <div class="col-sm-5" style="border: 1px solid gray; border-style: none">
-      <h2 class="text-center">Welcome Back Admin</h2>
+      <h2 class="text-center">Welcome Back</h2>
       <br />
       <p v-if="message" class="text-danger">{{ this.message }}</p>
       <div class="form-group form-floating">
@@ -66,18 +66,17 @@ export default {
   },
   methods: {
     signin() {
-      let url = "http://127.0.0.1:8000/api/signin";
-      let user = {
-        email: this.email, 
-        password: this.password 
-      };
-      axios.post(url, user).then((response) => {
-        if (response.data.success == true) {
-          localStorage.email=this.email
-          this.$router.push({ name: 'admin' })
-        } else {
-          this.message = "Incorrect Credentials";
-        }
+      let url = "http://127.0.0.1:8000/api/login";
+      let user = { email: this.email, password: this.password };
+      axios
+        .post(url, user)
+        .then((response) => {
+          if (response.data.success == true) {
+            localStorage.email=this.email
+            this.$router.push({ name: 'dashboard' })
+          } else {
+            this.message = "Incorrect Credentials";
+          }
         }).catch((err) => console.log(err));
     },
   },
