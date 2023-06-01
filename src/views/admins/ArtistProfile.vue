@@ -65,6 +65,7 @@
             details: '',
             song_type: '',
             location: '',
+            profile_picture: [],
             artist_charge: '',
             message: "",
             category:'',
@@ -114,35 +115,33 @@
         },
         send() {
             let url = `http://localhost:8000/api/artist/${this.user.artist_id}`;
-            const formData = new FormData();
-            // let data = {
-            //         artist_name: this.artist_name,
-            //     artist_email: this.artist_email,
-            //     phone_number: this.phone_number,
-            //     details: this.details,
-            //     song_type: this.song_type,
-            //     location: this.location,
-            //     profile_picture: this.file,
-            //     artist_charge: this.artist_charge,
-            // }
-            formData.append('artist_name', this.artist_name);
-            console.log(formData.append('artist_name', this.artist_name));
-            formData.append('artist_email', this.artist_email);
-            formData.append('phone_number', this.phone_number);
-            formData.append('details', this.details);
-            formData.append('song_type', this.song_type);
-            formData.append('location', this.location);
-            formData.append('artist_charge', this.artist_charge)
-            formData.append('file', this.file)
-            console.log(formData);
-            axios.patch(url,formData).then((response) => {
+            const fd = new FormData();
+            let data = {
+                artist_name: this.artist_name,
+                artist_email: this.artist_email,
+                phone_number: this.phone_number,
+                details: this.details,
+                song_type: this.song_type,
+                location: this.location,
+                profile_picture: this.file,
+                artist_charge: this.artist_charge,
+            }
+            fd.append('artist_name', data.artist_name);
+            fd.append('artist_email', data.artist_email);
+            fd.append('phone_number', data.phone_number);
+            fd.append('details', data.details);
+            fd.append('song_type', data.song_type);
+            fd.append('location', data.location);
+            fd.append('artist_charge', data.artist_charge)
+            fd.append('file', this.file);
+            axios.patch(url,data).then((response) => {
                 console.log(response);
-                if (response.data.status == true) {
-                    this.message = response.data.message
-                    // this.$router.push({ name: 'admin' })
-                } else {
-                    alert('Something went wrong');
-                }
+                // if (response.data.status == true) {
+                //     this.message = response.data.message
+                //     this.$router.push({ name: 'admin' })
+                // } else {
+                //     alert('Something went wrong');
+                // }
             })
             // formData.append('file', this.file);
             // axios.patch(url, formData).then((response) => {
