@@ -81,7 +81,7 @@
             <div class="row mt-4 text-center">
                 <div class="col-md-3 ml-5">
                     <div class="card text-light">
-                        <img src="../assets/group.jpg"/>
+                        <img src=""/>
                         <div class="card-img-overlay">
                             <h5 class="card-title">Wedding <br/> Reception</h5>
                         </div>
@@ -90,7 +90,7 @@
                 
                 <div class="col-md-3">
                     <div class="card text-light">
-                        <img src="../assets/group.jpg"/>
+                        <img src=""/>
                         <div class="card-img-overlay">
                             <h5 class="card-title">Traditional <br/> Reception</h5>
                         </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="card text-light">
-                        <img src="../assets/group.jpg"/>
+                        <img src=""/>
                         <div class="card-img-overlay">
                             <h5 class="card-title">After <br/> Party</h5>
                         </div>
