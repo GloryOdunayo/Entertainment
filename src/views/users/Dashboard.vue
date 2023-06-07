@@ -125,7 +125,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            <img src="../assets/Camera/05.jpg" class="images"/><br/>Profile
+                            <img src="" class="images"/><br/>Profile
                         </a>
                     </li>
                     </ul>
