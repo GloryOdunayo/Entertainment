@@ -44,7 +44,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .btn{
         border-color: black;
         color: black;

@@ -9,7 +9,7 @@
                    <input type="date" class="form-control"/>
             </div>
             <div class="mt-3 text-center">
-                <button class="btn btn text-light  w-25 m-2 ">Back</button>
+                <button class="btn btn text-light  w-25 m-2 " @click="back">Back</button>
                 <button class="btn btn text-light  w-25 m-2 "><a href="bookingfour">Next</a></button>
             </div>
          </div> 
@@ -18,7 +18,14 @@
 
 <script>
 export default {
+    data(){
 
+    },
+    methods: {
+        back() {
+            this.$router.go(-1);
+        },
+    }
 }
 </script>
 

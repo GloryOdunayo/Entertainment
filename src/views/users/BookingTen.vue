@@ -18,7 +18,7 @@
           </div>
 
           <div class="mt-5 ml-3">
-              <button class="btn btn text-light  w-25 m-1 ">Back</button>
+              <button class="btn btn text-light  w-25 m-1 " @click="back">Back</button>
               <button class="btn btn text-light  w-25 m-1 "><a href="booking">Next</a></button>
           </div>
        </div> 
@@ -27,7 +27,14 @@
 
 <script>
 export default {
+    data(){
 
+    },
+    methods: {
+        back() {
+            this.$router.go(-1);
+        },
+    }
 }
 </script>
 

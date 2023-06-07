@@ -6,6 +6,10 @@
                 <input type="file" name="file" @change="onChangeFile" class="form-control" id="floatingInput" placeholder="Profile Picture">
                 <label for="floatingInput">Profile Picture</label>
             </div>
+            <!-- <div class="form-floating mb-3">
+                <input type="file" ref="pictureInput" @change="onChangeFile" class="form-control" id="floatingInput" placeholder="Profile Picture">
+                <label for="floatingInput">Profile Picture</label> -->
+            <!-- </div> -->
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" v-on:click="send" class="btn btn-outline-primary px-4 fs-5">Post</button>
             </div>
@@ -19,7 +23,7 @@
     data() {
         return {
             user: {},
-            file: '',
+            file: "",
             message: "",
         }
     },
@@ -45,19 +49,21 @@
         onChangeFile(event){
             // console.log(this.$emit('update:modelValue', event.target.files[0]))
             this.file = event.target.files[0]
+            // this.picture = this.$refs.pictureInput.files[0];
         },
         send() {
             let url = `http://localhost:8000/api/${this.user.artist_id}/upload`;
             const formData = new FormData();
             formData.append('file', this.file);
-            axios.post(url, formData).then((response) => {
-                if (response.data.status == true) {
-                    console.log('File uploaded successfully!');
-                    // this.message = response.data.message
-                    // this.$router.push({ name: 'admin' })
-                } else {
-                    console.log('Something went wrong');
-                }
+            axios.patch(url, formData).then((response) => {
+                console.log(response);
+                // if (response.data.status == true) {
+                //     console.log('File uploaded successfully!');
+                //     this.message = response.data.message
+                //     this.$router.push({ name: 'admin' })
+                // } else {
+                //     console.log('Something went wrong');
+                // }
             })
         }
     },
